@@ -2,11 +2,12 @@
   "name": "sense-inference-plugin",
   "version": "1.0.0",
   "description": "根据算法得到的推理结果展示物体检测、图像分类、图像分割内容",
-  "main": "sense-inference-plugin.js",
+  "main": "lib/bin/app.js",
   "scripts": {
-    "compile": "npx babel-cli -d",
+    "compile": "npx babel-cli -d lib/ src/",
     "prepublishOnly": "npm run compile",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx mocha test/*.test.js",
+    "dev": "npx nodemon ./example/dev.babel.js"
   },
   "repository": {
     "type": "git",
